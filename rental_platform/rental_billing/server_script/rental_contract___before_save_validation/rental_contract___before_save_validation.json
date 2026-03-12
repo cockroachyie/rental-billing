@@ -1,0 +1,10 @@
+{
+ "doctype": "Server Script",
+ "name": "Rental Contract - Before Save Validation",
+ "script_type": "DocType Event",
+ "reference_doctype": "Rental Contract",
+ "doctype_event": "Before Save",
+ "disabled": 0,
+ "module": "Rental Billing",
+ "script": "if not doc.contract_start_date or not doc.contract_end_date:\n    frappe.throw(\"Start Date and End Date are required.\")\n\nif doc.contract_start_date >= doc.contract_end_date:\n    frappe.throw(\"End Date must be after Start Date.\")\n\nif not doc.billing_type:\n    frappe.throw(\"Billing Type is required.\")\n\nif not doc.billing_frequency:\n    frappe.throw(\"Billing Frequency is required.\")\n\nif not doc.billing_amount or doc.billing_amount <= 0:\n    frappe.throw(\"Billing Amount must be greater than zero.\")"
+}

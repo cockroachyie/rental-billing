@@ -1,0 +1,10 @@
+{
+ "doctype": "Server Script",
+ "name": "Rental Contract - Before Cancel",
+ "script_type": "DocType Event",
+ "reference_doctype": "Rental Contract",
+ "doctype_event": "Before Cancel",
+ "disabled": 0,
+ "module": "Rental Billing",
+ "script": "submitted_invoices = frappe.get_all(\"Sales Invoice\", filters={\"rental_contract\": doc.name, \"docstatus\": 1}, fields=[\"name\"])\n\nif submitted_invoices:\n    invoice_list = \", \".join([inv[\"name\"] for inv in submitted_invoices])\n    frappe.throw(f\"Cannot cancel. Submitted invoices exist: {invoice_list}. Please cancel them first.\")"
+}

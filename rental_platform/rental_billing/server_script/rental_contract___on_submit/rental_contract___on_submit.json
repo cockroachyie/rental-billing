@@ -1,0 +1,10 @@
+{
+ "doctype": "Server Script",
+ "name": "Rental Contract - On Submit",
+ "script_type": "DocType Event",
+ "reference_doctype": "Rental Contract",
+ "doctype_event": "After Submit",
+ "disabled": 0,
+ "module": "Rental Billing",
+ "script": "frappe.db.set_value(\"Rental Contract\", doc.name, \"status\", \"Active\")\n\nif not doc.po_number:\n    frappe.msgprint(\"No PO linked. Contract requires approval: Sales \u2192 Accounts \u2192 Management.\", indicator=\"orange\", alert=True)"
+}
