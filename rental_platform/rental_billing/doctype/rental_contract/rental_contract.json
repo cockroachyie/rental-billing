@@ -18,7 +18,9 @@
   "po_required",
   "po_number",
   "po_total_value",
-  "amended_from"
+  "amended_from",
+  "statussection",
+  "status"
  ],
  "fields": [
   {
@@ -103,13 +105,26 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "statussection",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nPre-Closed\nCancelled",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-10 15:34:29.323352",
+ "modified": "2026-03-17 22:51:10.057471",
  "modified_by": "Administrator",
  "module": "Rental Billing",
  "name": "Rental Contract",
