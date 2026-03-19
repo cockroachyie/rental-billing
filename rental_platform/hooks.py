@@ -166,6 +166,12 @@ app_license = "mit"
 # 	],
 # }
 
+scheduler_events = {
+    "daily": [
+        "rental_platform.rental_billing.scheduler.jobs.generate_due_invoices"
+    ]
+}
+
 # Testing
 # -------
 
