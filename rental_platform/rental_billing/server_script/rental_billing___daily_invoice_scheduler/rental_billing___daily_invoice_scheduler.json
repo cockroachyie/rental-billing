@@ -1,0 +1,22 @@
+{
+  "name": "Rental Billing - Daily Invoice Scheduler",
+  "owner": "janhaviramakrishnan8@gmail.com",
+  "creation": "2026-03-17 21:46:44.986900",
+  "modified": "2026-03-21 12:44:48.740320",
+  "modified_by": "janhaviramakrishnan8@gmail.com",
+  "docstatus": 0,
+  "idx": 0,
+  "script_type": "Scheduler Event",
+  "reference_doctype": null,
+  "event_frequency": "Daily",
+  "cron_format": null,
+  "doctype_event": "Before Insert",
+  "api_method": null,
+  "allow_guest": 0,
+  "module": "Rental Billing",
+  "disabled": 0,
+  "enable_rate_limit": 0,
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "doctype": "Server Script"
+}
