@@ -1,0 +1,11 @@
+{
+ "creation": "2026-03-19 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Server Script",
+ "dt": "Rental Contract",
+ "event": "After Submit",
+ "module": "Rental Billing",
+ "name": "Rental Contract - Generate Billing Schedule",
+ "script": "frequency_map = {\n    \"Monthly\": 1,\n    \"Quarterly\": 3,\n    \"Half-Yearly\": 6,\n    \"Yearly\": 12\n}\nmonths = frequency_map.get(doc.billing_frequency, 1)\nstart = doc.contract_start_date\nend = doc.contract_end_date\nperiod_start = start\nwhile period_start < end:\n    period_end = frappe.utils.add_months(period_start, months)\n    period_end = frappe.utils.add_days(period_end, -1)\n    if period_end > end:\n        period_end = end\n    if doc.billing_type == \"Advance\":\n        scheduled_date = period_start\n    else:\n        scheduled_date = period_end\n    bs = frappe.new_doc(\"Billing Schedule\")\n    bs.rental_contract = doc.name\n    bs.customer = doc.customer\n    bs.scheduled_date = scheduled_date\n    bs.billing_amount = doc.billing_amount\n    bs.period_start = period_start\n    bs.period_end = period_end\n    bs.status = \"Pending\"\n    bs.insert(ignore_permissions=True)\n    period_start = frappe.utils.add_months(period_start, months)",
+ "script_type": "DocType Event"
+}
