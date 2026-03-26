@@ -1,8 +1,9 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-03-18 22:17:48.727982",
+ "creation": "2026-03-26 17:59:26.399669",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "po_details_section",
@@ -88,7 +89,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-22 18:18:20.412430",
+ "modified": "2026-03-26 17:59:26.399669",
  "modified_by": "Administrator",
  "module": "Rental Billing",
  "name": "PO Control",

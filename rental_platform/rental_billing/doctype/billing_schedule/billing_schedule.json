@@ -6,12 +6,14 @@
  "engine": "InnoDB",
  "field_order": [
   "billing_details_section",
-  "contract",
-  "billing_date",
-  "amount",
+  "rental_contract",
   "customer",
-  "item",
+  "scheduled_date",
+  "billing_amount",
+  "period_start",
+  "period_end",
   "company",
+  "item",
   "sales_invoice",
   "status"
  ],
@@ -22,38 +24,52 @@
    "label": "Billing Details"
   },
   {
-   "fieldname": "contract",
+   "fieldname": "rental_contract",
    "fieldtype": "Link",
-   "label": "Contract",
-   "options": "Rental Contract"
-  },
-  {
-   "fieldname": "billing_date",
-   "fieldtype": "Date",
-   "label": "Billing Date"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Currency",
-   "label": "Amount"
+   "label": "Rental Contract",
+   "options": "Rental Contract",
+   "in_list_view": 1
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "in_list_view": 1
   },
   {
-   "fieldname": "item",
-   "fieldtype": "Link",
-   "label": "Item",
-   "options": "Item"
+   "fieldname": "scheduled_date",
+   "fieldtype": "Date",
+   "label": "Scheduled Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "billing_amount",
+   "fieldtype": "Currency",
+   "label": "Billing Amount",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "period_start",
+   "fieldtype": "Date",
+   "label": "Period Start"
+  },
+  {
+   "fieldname": "period_end",
+   "fieldtype": "Date",
+   "label": "Period End"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "Company",
    "options": "Company"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
   },
   {
    "fieldname": "sales_invoice",
@@ -65,13 +81,14 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nInvoiced\nCancelled"
+   "options": "Pending\nInvoiced\nCancelled",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-12 17:02:53.581855",
+ "modified": "2026-03-25 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Rental Billing",
  "name": "Billing Schedule",
@@ -94,5 +111,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "rental_contract"
 }
