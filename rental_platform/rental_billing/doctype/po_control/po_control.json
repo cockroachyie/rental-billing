@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-03-26 17:59:26.399669",
+ "creation": "2026-03-26 18:01:03.073024",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -89,8 +89,8 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-26 17:59:26.399669",
- "modified_by": "Administrator",
+ "modified": "2026-04-01 10:12:00.475869",
+ "modified_by": "vivynkrishnaa@gmail.com",
  "module": "Rental Billing",
  "name": "PO Control",
  "owner": "Administrator",
@@ -104,6 +104,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
    "share": 1,
    "write": 1
   }

@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Rental Contract",
+  "enabled": 1,
+  "modified": "2026-03-12 17:19:22.637965",
+  "module": "Rental Billing",
+  "name": "Rental Contract - Client Script",
+  "script": "frappe.ui.form.on('Rental Contract', {\n    refresh(frm) {\n        // Show PO fields only if PO is required\n        frm.toggle_display('po_number', frm.doc.po_required);\n        frm.toggle_display('po_total_value', frm.doc.po_required);\n    },\n\n    po_required(frm) {\n        // Show/hide PO fields when checkbox is toggled\n        frm.toggle_display('po_number', frm.doc.po_required);\n        frm.toggle_display('po_total_value', frm.doc.po_required);\n    },\n\n    contract_end_date(frm) {\n        // Warn immediately if end date is before start date\n        if (frm.doc.contract_start_date && frm.doc.contract_end_date) {\n            if (frm.doc.contract_end_date <= frm.doc.contract_start_date) {\n                frappe.msgprint({\n                    message: 'End Date must be after Start Date.',\n                    indicator: 'red'\n                });\n                frm.set_value('contract_end_date', '');\n            }\n        }\n    }\n});",
+  "view": "Form"
+ }
+]

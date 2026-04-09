@@ -247,3 +247,61 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+
+# Fixtures
+# --------
+# Export customizations for cloud deployment
+
+fixtures = [
+    {
+        "dt": "Server Script",
+        "filters": [
+            [
+                "module", "in", [
+                    "Rental Billing"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "module", "in", [
+                    "Rental Billing"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            [
+                "module", "in", [
+                    "Rental Billing"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Client Script",
+        "filters": [
+            [
+                "module", "in", [
+                    "Rental Billing"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Workflow",
+        "filters": [
+            [
+                "document_type", "in", [
+                    "Rental Contract",
+                    "PO Control"
+                ]
+            ]
+        ]
+    }
+]
